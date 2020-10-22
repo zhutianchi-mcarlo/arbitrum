@@ -37,4 +37,11 @@ interface ArbSys {
     // This function is only callable from address 0 to prevent contracts from being
     // able to call it
     function getStorageAt(address account, uint256 index) external view returns (uint256);
+
+    function addressTable_lookupAddress(address add, bool should_register)
+        external
+        view
+        returns (uint256);
+
+    function addressTable_lookupIndex(uint256 index) external view returns (address);
 }

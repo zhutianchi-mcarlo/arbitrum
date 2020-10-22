@@ -12,6 +12,14 @@ import {
 
 interface ArbSysInterface extends Interface {
   functions: {
+    addressTable_lookupAddress: TypedFunctionDescription<{
+      encode([add, should_register]: [string, boolean]): string
+    }>
+
+    addressTable_lookupIndex: TypedFunctionDescription<{
+      encode([index]: [BigNumberish]): string
+    }>
+
     getStorageAt: TypedFunctionDescription<{
       encode([account, index]: [string, BigNumberish]): string
     }>
@@ -48,6 +56,28 @@ export class ArbSys extends Contract {
   interface: ArbSysInterface
 
   functions: {
+    addressTable_lookupAddress(
+      add: string,
+      should_register: boolean,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
+    'addressTable_lookupAddress(address,bool)'(
+      add: string,
+      should_register: boolean,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
+    addressTable_lookupIndex(
+      index: BigNumberish,
+      overrides?: TransactionOverrides
+    ): Promise<string>
+
+    'addressTable_lookupIndex(uint256)'(
+      index: BigNumberish,
+      overrides?: TransactionOverrides
+    ): Promise<string>
+
     getStorageAt(
       account: string,
       index: BigNumberish,
@@ -104,6 +134,28 @@ export class ArbSys extends Contract {
       overrides?: TransactionOverrides
     ): Promise<ContractTransaction>
   }
+
+  addressTable_lookupAddress(
+    add: string,
+    should_register: boolean,
+    overrides?: TransactionOverrides
+  ): Promise<BigNumber>
+
+  'addressTable_lookupAddress(address,bool)'(
+    add: string,
+    should_register: boolean,
+    overrides?: TransactionOverrides
+  ): Promise<BigNumber>
+
+  addressTable_lookupIndex(
+    index: BigNumberish,
+    overrides?: TransactionOverrides
+  ): Promise<string>
+
+  'addressTable_lookupIndex(uint256)'(
+    index: BigNumberish,
+    overrides?: TransactionOverrides
+  ): Promise<string>
 
   getStorageAt(
     account: string,
@@ -164,6 +216,28 @@ export class ArbSys extends Contract {
   filters: {}
 
   estimate: {
+    addressTable_lookupAddress(
+      add: string,
+      should_register: boolean,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
+    'addressTable_lookupAddress(address,bool)'(
+      add: string,
+      should_register: boolean,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
+    addressTable_lookupIndex(
+      index: BigNumberish,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
+    'addressTable_lookupIndex(uint256)'(
+      index: BigNumberish,
+      overrides?: TransactionOverrides
+    ): Promise<BigNumber>
+
     getStorageAt(
       account: string,
       index: BigNumberish,

@@ -18,6 +18,53 @@ const _abi = [
     inputs: [
       {
         internalType: 'address',
+        name: 'add',
+        type: 'address',
+      },
+      {
+        internalType: 'bool',
+        name: 'should_register',
+        type: 'bool',
+      },
+    ],
+    name: 'addressTable_lookupAddress',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        internalType: 'uint256',
+        name: 'index',
+        type: 'uint256',
+      },
+    ],
+    name: 'addressTable_lookupIndex',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [
+      {
+        internalType: 'address',
         name: 'account',
         type: 'address',
       },
