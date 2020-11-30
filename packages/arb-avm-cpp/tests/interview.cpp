@@ -84,5 +84,16 @@ TEST_CASE("Interview") {
     value deserialized_val;
     // initialize this from value_data
 
+    // Useful functions
+
+    //  auto ret = intx::be::unsafe::load<uint256_t>(reinterpret_cast<const
+    //  unsigned char*>(bufptr));
+
+    //    Tuple tup(values);
+    //    for (uint8_t j = 0; j < values; ++j) {
+    //        tup.set_element(j, std::move(values[val_pos + 1 +
+    //        j].get<value>()));
+    //    }
+
     REQUIRE(hash_value(deserialized_val) == hash);
 }
