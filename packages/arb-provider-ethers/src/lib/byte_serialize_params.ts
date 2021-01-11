@@ -12,9 +12,10 @@ type BytesNumber = 1 | 4 | 8 | 16 | 32
 // to use:
 // const mySerializeParamsFunction = argSerializerConstructor("rpcurl")
 export const argSerializerConstructor = (
-  arbProvider: JsonRpcProvider
+  arbProviderUrl: string
 ): ((params: PrimativeOrPrimativeArray[]) => Promise<Uint8Array>) => {
-  return async (params: PrimativeOrPrimativeArray[]) => {
+  const arbProvider = new JsonRpcProvider(arbProviderUrl)
+  return async (params: PrimativeOrPrimativeArray[]) => {    
     return await serializeParams(params, async (address: string) => {
       return await getAddressIndex(address, arbProvider)
     })
